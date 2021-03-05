@@ -1,9 +1,12 @@
 import React, { useEffect, useContext } from 'react';
-import { Text } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import { Container } from '../../components/CommonStyledComponents';
+import {
+  Container,
+  Scroller
+} from './style';
 import NoFlightsSelectedForProfile from '../../components/NoFlightSelectedForProfile'
+import MyFlightStatusTopBar from '../../components/MyFlighStatusTopBar';
 import MyFlight from '../../components/MyFlight'
 
 
@@ -26,6 +29,8 @@ export default ({navigation}) => {
 
   return (
     <Container>
+      <MyFlightStatusTopBar />
+      <Scroller>
       {user.flights.length <= 0 ?
         <NoFlightsSelectedForProfile />
       :
@@ -33,6 +38,7 @@ export default ({navigation}) => {
           (flight, idx) => <MyFlight key={{flight}, idx} data={flight} />
         )
       }
+      </Scroller>
     </Container>
   );
 }

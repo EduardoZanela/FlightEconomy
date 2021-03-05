@@ -29,7 +29,7 @@ const TextDefault= styled.Text`
 export default () => {
   return(
     <NoFlightsArea>
-      <TextTitle>Status: No aircraft</TextTitle>
+      <TextTitle></TextTitle>
       <TextDefault>You need to rent an aircraft before you can start your flight.</TextDefault>
       <TextDefault>Holding Area - Empty</TextDefault>
       <TextDefault>No assignments selected</TextDefault>
